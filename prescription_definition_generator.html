@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Drug Definition Generator</title>
+<style>
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+body{
+background-color: lightblue;
+}
+.container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+h1{
+color:  #ffcccb;
+font-weight: bold;
+background-color: gray;
+}
+img{
+border: 5px solid black;
+}
+#drug-def{
+text-align: center;
+text-align-last: center;
+word-wrap: break-word;
+color: white;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<img src="https://media.istockphoto.com/id/1205850790/photo/medical-bottles-and-medication-pills-spilling-out-on-to-pastel-blue-background-top-view-with.jpg?s=612x612&w=0&k=20&c=E1aNy-9y_9ra508tXH9NxpfZpeeKeeJo__WoRhntuW0=">
+<h1 class="heading">Prescription Definition Generator</h1>
+<select name="drug-list" id="drug-list" onchange="search_drugs()">
+<option value="select a drug">Select a drug</option>
+</select>
+<div class="definition">
+<p id="drug-def"></p>
+</div>
+</div>
+<script>
+let drugs = [
+  "abilify",
+  "acyclovir",
+  "advil",
+  "albuterol",
+  "alli diet",
+  "allopurinol",
+  "amoxicillin",
+  "ampicillin",
+  "antabuse",
+  "arimidex",
+  "atenolol",
+  "augmentin",
+  "avana",
+  "avodart",
+  "aygestin",
+  "baclofen",
+  "benicar",
+  "bupropion",
+  "cafergot",
+  "celebrex",
+  "celexa",
+  "cephalexin",
+  "chlorthalidone",
+  "cialis",
+  "cipro",
+  "cleocin",
+  "clomid",
+  "clonidine",
+  "cymbalta",
+  "diclofenac",
+  "effexor",
+  "elimite",
+  "esomeprazole",
+  "flagyl",
+  "fluconazole",
+  "fourosimide",
+  "hydrochlorothiazide",
+  "inderal",
+  "indomethacin",
+  "keflex",
+  "lasix",
+  "levitra",
+  "lexapro",
+  "lipitor",
+  "lisinopril",
+  "medrol",
+  "methotrexate",
+  "minoxidil",
+  "motilium",
+  "motrin",
+  "neurontin",
+  "nexium",
+  "nolvadex",
+  "permethrin",
+  "prednisolone",
+  "prednisone",
+  "proscar",
+  "provera",
+  "prozac",
+  "retin-a",
+  "rimonabant",
+  "robaxin",
+  "rogaine",
+  "seroquel",
+  "sildenafil",
+  "strattera",
+  "stromectol",
+  "suhagra",
+  "synthroid",
+  "tadacip",
+  "tadalafil",
+  "tamoxifen",
+  "tenormin",
+  "toradol",
+  "trazodone",
+  "tretinoin",
+  "triamterene",
+  "vermox",
+  "viagra",
+  "wellbutrin",
+  "yasmin",
+  "zithromax",
+  "zofran",
+  "zoloft"
+];
+var select = document.getElementById("drug-list");
+for(var i = 0; i < drugs.length; i++){
+	var opt = drugs[i];
+	var el = document.createElement("option");
+	el.text = opt;
+	el.value = opt;
+	select.add(el);
+}
+function search_drugs(){
+if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "Select a drug"){
+	document.getElementById("drug-def").innerHTML = "";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "abilify"){
+	document.getElementById("drug-def").innerHTML = "Aripiprazole is used to treat certain mental/mood disorders (such as bipolar disorder, schizophrenia, Tourette's syndrome, and irritability associated with autistic disorder).";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "acyclovir"){
+	document.getElementById("drug-def").innerHTML = "It is used to prevent and treat herpes infections of the skin, mouth, and mucous membranes; herpes zoster (shingles); chicken pox; and genital herpes.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "advil"){
+	document.getElementById("drug-def").innerHTML = "The pain reliever in Advil is ibuprofen, a nonsteroidal antiinflammatory drug (NSAID) that most people use to reduce headaches, treat soreness, and eliminate pain throughout the body.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "albuterol"){
+	document.getElementById("drug-def").innerHTML = "Albuterol is used for the treatment and prevention of bronchospasm (acute or severe) in patients with reversible obstructive airway disease. It also has an indication for the prevention of exercise-induced bronchospasm.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "alli diet"){
+	document.getElementById("drug-def").innerHTML = "Alli is a 60-milligram, over-the-counter version of orlistat (Xenical), a 120-milligram prescription drug. Both Alli and Xenical are meant to be used as part of a weight-loss plan, along with a low-calorie, low-fat diet and regular physical activity.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "allopurinol"){
+	document.getElementById("drug-def").innerHTML = "Allopurinol is in a class of medications called xanthine oxidase inhibitors. It works by reducing the production of uric acid in the body. High levels of uric acid may cause gout attacks or kidney stones. Allopurinol is used to prevent gout attacks, not to treat them once they occur.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "amoxicillin"){
+	document.getElementById("drug-def").innerHTML = "It is used to treat bacterial infections, such as chest infections (including pneumonia) and dental abscesses. It can also be used together with other antibiotics and medicines to treat stomach ulcers. It's often prescribed for children, to treat ear infections and chest infections.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "ampicillin"){
+	document.getElementById("drug-def").innerHTML = "Ampicillin is a medication used to manage and treat certain bacterial infections. It is in the penicillin class of medications. Ampicillin was developed to overcome the issue of drug resistance and extend the antimicrobial coverage of penicillins.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "antabuse"){
+	document.getElementById("drug-def").innerHTML = "Antabuse is used in certain people with chronic alcoholism. This medicine can help keep you from drinking because of the unpleasant side effects that will occur if you consume alcohol while taking Antabuse.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "arimidex"){
+	document.getElementById("drug-def").innerHTML = "Anastrozole is a hormone therapy drug used to treat breast cancer in women who have gone through a natural menopause (when periods stop). It can also be used in premenopausal women having ovarian suppression (treatment to stop the ovaries working).";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "atenolol"){
+	document.getElementById("drug-def").innerHTML = "Atenolol is a beta blocker medicine, used to treat high blood pressure (hypertension) and irregular heartbeats (arrhythmia).";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "augmentin"){
+	document.getElementById("drug-def").innerHTML = "AUGMENTIN is an antibiotic used for the short term treatment of infections in different parts of the body caused by bacteria.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "avana"){
+	document.getElementById("drug-def").innerHTML = "used to treat erectyle dysfunction";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "avodart"){
+	document.getElementById("drug-def").innerHTML = "AVODART lowers DHT production in the body, leading to shrinkage of the enlarged prostate in most men.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "aygestin"){
+	document.getElementById("drug-def").innerHTML = "Norethindrone acetate (Aygestin) is used for regulating monthly periods and treating endometriosis";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "baclofen"){
+	document.getElementById("drug-def").innerHTML = "Baclofen is used to treat pain and certain types of spasticity (muscle stiffness and tightness) from multiple sclerosis, spinal cord injuries, or other spinal cord diseases. Baclofen is in a class of medications called skeletal muscle relaxants.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "benicar"){
+	document.getElementById("drug-def").innerHTML = "Olmesartan (Benicar) is a medication used to lower blood pressure and can also protect the kidneys.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "bupropion"){
+	document.getElementById("drug-def").innerHTML = "Bupropion is the treatment of choice for mild-to-moderate depression. It is also a preferred agent in the treatment of severe melancholic and atypical depression associated with bipolar disorder.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "cafergot"){
+	document.getElementById("drug-def").innerHTML = "This combination medication is used to treat or prevent certain types of headaches (vascular headaches including migraine and cluster headaches). Headache pain can sometimes be caused by widened blood vessels in the head. Ergotamine works by narrowing these widened blood vessels.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "celebrex"){
+	document.getElementById("drug-def").innerHTML = "Celecoxib is used to relieve pain, tenderness, swelling and stiffness caused by osteoarthritis (arthritis caused by a breakdown of the lining of the joints), rheumatoid arthritis (arthritis caused by swelling of the lining of the joints), and ankylosing spondylitis (arthritis that mainly affects the spine).";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "celexa"){
+	document.getElementById("drug-def").innerHTML = "Citalopram is selective serotonin reuptake inhibitor (SSRI) antidepressant. Citalopram is used to treat depression. Citalopram may also be used for purposes not listed in this medication guide.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "cephalexin"){
+	document.getElementById("drug-def").innerHTML = "Cephalexin is used to treat certain infections caused by bacteria such as pneumonia and other respiratory tract infections; and infections of the bone, skin, ears, , genital, and urinary tract. Cephalexin is in a class of medications called cephalosporin antibiotics. It works by killing bacteria.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "chlorthalidone"){
+	document.getElementById("drug-def").innerHTML = "";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "cialis"){
+	document.getElementById("drug-def").innerHTML = "Chlorthalidone, a 'water pill,' is used to treat high blood pressure and fluid retention caused by various conditions, including heart disease. It causes the kidneys to get rid of unneeded water and salt from the body into the urine.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "cipro"){
+	document.getElementById("drug-def").innerHTML = "Ciprofloxacin is a broad-spectrum antibiotic which means that it's used to treat a number of bacterial infections, such as: uncomplicated urinary tract infections (UTIs) where other antibiotics are not suitable and complicated UTIs. chest infections (including pneumonia) skin and bone infections.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "cleocin"){
+	document.getElementById("drug-def").innerHTML = "Clindamycin is a medicine used to treat different types of bacterial infections. It's commonly prescribed for infections of the lungs, skin, blood, reproductive organs (in women), and internal organs. Clindamycin is an antibiotic; it works by slowing the growth of bacteria.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "clomid"){
+	document.getElementById("drug-def").innerHTML = "Clomiphene is used to induce ovulation (egg production) in women who do not produce ova (eggs) but wish to become pregnant (infertility). Clomiphene is in a class of medications called ovulatory stimulants.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "clonidine"){
+	document.getElementById("drug-def").innerHTML = "";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "cymbalta"){
+	document.getElementById("drug-def").innerHTML = "Clonidine is an antihypertensive drug that lowers blood pressure and heart rate by relaxing the arteries and increasing the blood supply to the heart; it has the following FDA-approved indications: Hypertension, as mentioned above; pediatric use for hypertension is off-label.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "diclofenac"){
+	document.getElementById("drug-def").innerHTML = "Diclofenac is a medicine that reduces swelling (inflammation) and pain. It's used to treat aches and pains, as well as problems with joints, muscles and bones. These include: rheumatoid arthritis and osteoarthritis.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "effexor"){
+	document.getElementById("drug-def").innerHTML = "EFFEXOR XR (venlafaxine extended-release) capsules are a prescription medicine used to treat adults with a certain type of depression called Major Depressive Disorder (MDD), Generalized Anxiety Disorder (GAD), Social Anxiety Disorder (SAD), or Panic Disorder (PD).";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "elimite"){
+	document.getElementById("drug-def").innerHTML = "Permethrin is an anti-parasite medication. Permethrin topical (for the skin) is used to treat head lice and scabies.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "esomeprazole"){
+	document.getElementById("drug-def").innerHTML = "Esomeprazole reduces the amount of acid your stomach makes. It's widely used to: treat indigestion, heartburn and acid reflux, and gastro-oesophageal reflux disease (GORD) – a condition which means you keep getting acid reflux. prevent stomach ulcers.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "flagyl"){
+	document.getElementById("drug-def").innerHTML = "Metronidazole is a medicine used to treat different types of bacterial and parasitic infections, including those that affect the skin, vagina, blood, heart, bone, stomach, liver, joints, nervous system, respiratory tract, and other areas of the body.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "fluconazole"){
+	document.getElementById("drug-def").innerHTML = "Fluconazole is used to treat serious fungal or yeast infections, including vaginal candidiasis, oropharyngeal candidiasis (thrush, oral thrush), esophageal candidiasis (candida esophagitis), other candida infections (including urinary tract infections, peritonitis [inflammation of the lining of the stomach], and infections that may occur in different parts of the body), or fungal (cryptococcal) meningitis. This medicine works by killing the fungus or yeast, or preventing its growth.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "fourosimide"){
+	document.getElementById("drug-def").innerHTML = "medicine to treat high blood pressure and oedema";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "hydrochlorothiazide"){
+	document.getElementById("drug-def").innerHTML = "Hydrochlorothiazide is used to treat edema (fluid retention; excess fluid held in body tissues) caused by various medical problems, including heart, kidney, and liver disease and to treat edema caused by using certain medications including estrogen and corticosteroids.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "inderal"){
+	document.getElementById("drug-def").innerHTML = "Propranolol is a beta-blocker that is used to treat angina (chest pain), hypertension (high blood pressure), heart rhythm disorders, and other heart or circulatory conditions. It is also used to reduce the risk of death after a heart attack.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "indomethacin"){
+	document.getElementById("drug-def").innerHTML = "Indomethacin is used to relieve moderate to severe pain, tenderness, swelling, and stiffness caused by osteoarthritis (arthritis caused by a breakdown of the lining of the joints), rheumatoid arthritis (arthritis caused by swelling of the lining of the joints), and ankylosing spondylitis (arthritis that mainly affects the spine). Indomethacin is also used to treat pain in the shoulder caused by bursitis (inflammation of a fluid-filled sac in the shoulder joint) and tendinitis (inflammation of the tissue that connects muscle to bone). Indomethacin immediate-release capsules and suspension (liquid) are also used to treat acute gouty arthritis (attacks of severe joint pain and swelling caused by a build-up of certain substances in the joints). Indomethacin is in a class of medications called NSAIDs. It works by stopping the body's production of a substance that causes pain, fever, and inflammation.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "keflex"){
+	document.getElementById("drug-def").innerHTML = "Cephalexin is used to treat certain infections caused by bacteria such as pneumonia and other respiratory tract infections; and infections of the bone, skin, ears, , genital, and urinary tract. Cephalexin is in a class of medications called cephalosporin antibiotics. It works by killing bacteria.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "lasix"){
+	document.getElementById("drug-def").innerHTML = "Lasix is used to treat swelling of the ankles, feet, legs or even the brain or lungs. This swelling is called oedema and can occur in some heart, lung, liver or kidney conditions. Lasix may be used in some patients with more serious kidney problems who may have some fluid retention.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "levitra"){
+	document.getElementById("drug-def").innerHTML = "Levitra contains vardenafil, a member of a class of medicines called phosphodiesterase type 5 inhibitors. They are used for the treatment of erectile dysfunction in adult men, a condition which implies difficulties in getting or keeping an erection.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "lexapro"){
+	document.getElementById("drug-def").innerHTML = "Escitalopram (Lexapro) is a first-choice antidepressant for the treatment of depression and anxiety. ";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "lipitor"){
+	document.getElementById("drug-def").innerHTML = "LIPITOR is a prescription medicine that contains a cholesterol lowering medicine (statin) called atorvastatin. LIPITOR is used: to reduce the risk of: heart attack, stroke, certain types of heart surgery and chest pain in adults who do not have heart disease but have other multiple risk factors for heart disease.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "lisinopril"){
+	document.getElementById("drug-def").innerHTML = "Lisinopril is a medicine to treat high blood pressure (hypertension) and heart failure. It's also prescribed after a heart attack and helps prevent future strokes and heart attacks. It also improves your survival if you're taking it after a recent heart attack or for heart failure.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "medrol"){
+	document.getElementById("drug-def").innerHTML = "Methylprednisolone is a medicine used to relieve symptoms of many conditions that cause inflammation, including certain types of arthritis; allergies; cancer; asthma; and skin, blood, eye, kidney, thyroid, and intestinal disorders. This medicine is a corticosteroid.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "methotrexate"){
+	document.getElementById("drug-def").innerHTML = "Methotrexate is in a class of medications called antimetabolites. Methotrexate treats cancer by slowing the growth of cancer cells. Methotrexate treats psoriasis by slowing the growth of skin cells to stop scales from forming. Methotrexate may treat rheumatoid arthritis by decreasing the activity of the immune system.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "minoxidil"){
+	document.getElementById("drug-def").innerHTML = "Minoxidil is a common medication prescribed for treating hair loss-related problems. It provides remarkable benefits to patients with hair disorders. ";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "motilium"){
+	document.getElementById("drug-def").innerHTML = "Domperidone is a medicine used for relief of symptoms of nausea and vomiting, and delayed stomach emptying.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "motrin"){
+	document.getElementById("drug-def").innerHTML = "The ibuprofen in MOTRIN® works to relieves minor aches and pains. It disrupts the production of prostaglandins, which are substances produced in response to injury that contribute to pain and inflammation. MOTRIN® can temporarily reduce fever and relieve minor aches and pains caused by: headache.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "neurontin"){
+	document.getElementById("drug-def").innerHTML = "Gabapentin (Neurontin, Gralise, Horizant) is a medicine used to help manage certain epileptic seizures. It also is used to relieve pain for some conditions, such as shingles.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "nexium"){
+	document.getElementById("drug-def").innerHTML = "Nexium contains a medicine called esomeprazole. This belongs to a group of medicines called 'proton pump inhibitors'. They work by reducing the amount of acid that your stomach produces. 'Gastroesophageal reflux disease' (GERD).";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "nolvadex"){
+	document.getElementById("drug-def").innerHTML = "Tamoxifen is used to treat some types of breast cancer in men and women.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "permethrin"){
+	document.getElementById("drug-def").innerHTML = "Permethrin is used to treat scabies ('mites that attach themselves to the skin) in adults and children 2 months of age and older.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "prednisolone"){
+	document.getElementById("drug-def").innerHTML = "Prednisolone helps reduce inflammation in your body. Symptoms of inflammation may include swelling, redness, pain, tenderness or itching in any part of your body. Prednisolone is used to treat many different conditions, including: severe allergies.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "prednisone"){
+	document.getElementById("drug-def").innerHTML = "It is used to treat a number of different conditions, such as inflammation (swelling), severe allergies, adrenal problems, arthritis, asthma, blood or bone marrow problems, endocrine problems, eye or vision problems, stomach or bowel problems, lupus, skin conditions, kidney problems, ulcerative colitis, and flare-ups";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "proscar"){
+	document.getElementById("drug-def").innerHTML = "Finasteride (Proscar) is used alone or in combination with another medication (doxazosin [Cardura]) to treat benign prostatic hypertrophy (BPH, enlargement of the prostate gland).";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "provera"){
+	document.getElementById("drug-def").innerHTML = "PROVERA is used to treat endometriosis, the absence of menstrual periods (not due to pregnancy), abnormal bleeding from the uterus, certain types of cancer including cancer of the breast, kidney and endometrium, and in combination with an estrogen containing medicine to relieve symptoms of menopause in women with an intact uterus.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "prozac"){
+	document.getElementById("drug-def").innerHTML = "Fluoxetine (Prozac): an antidepressant medicine to treat depression";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "retin-a"){
+	document.getElementById("drug-def").innerHTML = "Retin-A is a form of vitamin A used to rejuvenate skin and, in some cases, treat skin spots that may be precancerous.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "rimonabant"){
+	document.getElementById("drug-def").innerHTML = "Rimonabant is an anorectic anti-obesity drug produced and marketed by Sanofi-Aventis. It is an inverse agonist for the cannabinoid receptor CB1. Its main avenue of effect is reduction in appetite.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "robaxin"){
+	document.getElementById("drug-def").innerHTML = "Methocarbamol is a muscle relaxer that is used together with rest and physical therapy to treat skeletal muscle conditions such as pain or injury. Methocarbamol injection is sometimes used in the treatment of tetanus, (lockjaw) which causes painful tightening of the muscles.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "rogaine"){
+	document.getElementById("drug-def").innerHTML = "Minoxidil topical is used to help you regrow hair on your scalp. This medicine will not cause permanent regrowth of scalp hair. ";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "seroquel"){
+	document.getElementById("drug-def").innerHTML = "Quetiapine is an antipsychotic medication that treats several kinds of mental health conditions including schizophrenia and bipolar disorder. It balances the levels of dopamine and serotonin in your brain. These hormones help regulate your mood, behaviors and thoughts. The brand name of this medication is Seroquel®.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "sildenafil"){
+	document.getElementById("drug-def").innerHTML = "Sildenafil is a medicine used to treat erection problems (erectile dysfunction). Sildenafil is also sometimes used to treat pulmonary hypertension (high blood pressure in the blood vessels that supply the lungs).";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "strattera"){
+	document.getElementById("drug-def").innerHTML = "Atomoxetine is a non-stimulant prescription medication that is used to treat individuals with attention deficit hyperactivity disorder (ADHD).";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "stromectol"){
+	document.getElementById("drug-def").innerHTML = "Stromectol is used to treat certain parasitic roundworm infections";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "suhagra"){
+	document.getElementById("drug-def").innerHTML = "SUHAGRA 100MG contains sildenafil which is used to treat erectile dysfunction in men. It helps men to get and sustain an erected penis which is required for a normal sexual activity.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "synthroid"){
+	document.getElementById("drug-def").innerHTML = "SYNTHROID® (levothyroxine sodium) tablets, for oral use is a prescription, man-made thyroid hormone that is used to treat a condition called hypothyroidism in adults and children, including infants.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "tadacip"){
+	document.getElementById("drug-def").innerHTML = "TADACIP is used to treat: erectile dysfunction, also known as impotence, in men. This is when a man cannot get, or maintain, a hard erect penis suitable for sexual activity. Following sexual stimulation, TADACIP works by helping the blood vessels in your penis to relax, allowing the flow of blood into your penis.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "tadalafil"){
+	document.getElementById("drug-def").innerHTML = "Tadalafil: a medicine for erection problems, pulmonary hypertension and enlarged prostate";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "tamoxifen"){
+	document.getElementById("drug-def").innerHTML = "Tamoxifen is a hormone therapy for breast cancer in both women and men. It lowers the risk of early breast cancer coming back (recurring) after surgery or developing in the other breast. It can also control advanced breast cancer for some time.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "tenormin"){
+	document.getElementById("drug-def").innerHTML = "Atenolol is used with or without other medications to treat high blood pressure (hypertension). Lowering high blood pressure helps prevent strokes, heart attacks, and kidney problems. This medication is also used to treat chest pain (angina) and to improve survival after a heart attack.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "toradol"){
+	document.getElementById("drug-def").innerHTML = "Toradol (ketorolac) is a nonsteroidal anti-inflammatory drug (NSAID) that's used to relieve pain. It's commonly available as an injection and tablet. Toradol can be used for quick-acting pain relief when given as a shot, and effects can last up to 6 hours.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "trazodone"){
+	document.getElementById("drug-def").innerHTML = "Trazodone is an antidepressant medicine. It's used to treat depression, anxiety, or a combination of depression and anxiety. Trazodone works by increasing your levels of serotonin and noradrenaline so you feel better. It can help if you're having problems like low mood, not sleeping (insomnia) and poor concentration.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "tretinoin"){
+	document.getElementById("drug-def").innerHTML = "Tretinoin (Altreno, Atralin, Avita, Retin-A) is used to treat acne. Tretinoin is also used to reduce fine wrinkles (Refissa and Renova) and to improve spotty discoloration (Renova) and rough feeling skin (Renova) when used along with other skin care and sunlight avoidance programs.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "triamterene"){
+	document.getElementById("drug-def").innerHTML = "Triamterene is used alone or with other medications to treat edema (fluid retention; excess fluid held in body tissues) caused by various conditions, including liver and heart disease. Triamterene is in a class of medications called diuretics ('water pills').";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "vermox"){
+	document.getElementById("drug-def").innerHTML = "Mebendazole (Vermox) is used to treat roundworm and whipworm infections. Mebendazole (Emverm) is used to treat pinworm, whipworm, roundworm, and hookworm infections.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "viagra"){
+	document.getElementById("drug-def").innerHTML = "Sildenafil (Viagra) is used to treat erectile dysfunction (impotence; inability to get or keep an erection) in men.";
+	
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "wellbutrin"){
+	document.getElementById("drug-def").innerHTML = "Bupropion (Aplenzin, Wellbutrin, Wellbutrin SR, Wellbutrin XL) is used to treat depression.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "yasmin"){
+	document.getElementById("drug-def").innerHTML = "Yasmin is indicated for use by women to prevent pregnancy. Take one tablet by mouth at the same time every day.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "zithromax"){
+	document.getElementById("drug-def").innerHTML = "Azithromycin is used to treat certain bacterial infections, such as bronchitis; pneumonia; sexually transmitted diseases (STD); and infections of the ears, lungs, sinuses, skin, throat, and reproductive organs.";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "zofran"){
+	document.getElementById("drug-def").innerHTML = "Zofran® (ondansetron) is a medication that prevents nausea and vomiting caused by chemotherapy, radiation or surgery. It blocks substances in your body that can cause nausea and vomiting. ";
+}
+else if (document.getElementById("drug-list").options[document.getElementById("drug-list").selectedIndex].value == "zoloft"){
+	document.getElementById("drug-def").innerHTML = "Sertraline is used to treat depression, obsessive-compulsive disorder (bothersome thoughts that won't go away and the need to perform certain actions over and over), panic attacks (sudden, unexpected attacks of extreme fear and worry about these attacks), posttraumatic stress disorder (disturbing psychological symptoms that develop after a frightening experience), and social anxiety disorder (extreme fear of interacting with others or performing in front of others that interferes with normal life). It is also used to relieve the symptoms of premenstrual dysphoric disorder, including mood swings, irritability, bloating, and breast tenderness. Sertraline is in a class of antidepressants called selective serotonin reuptake inhibitors (SSRIs). It works by increasing the amounts of serotonin, a natural substance in the brain that helps maintain mental balance.";
+}
+}
+</script>
+</body>
+</html>
+
